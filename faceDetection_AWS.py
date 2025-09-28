@@ -4,7 +4,7 @@ from cv2.data import haarcascades
 
 rekognition = boto3.client('rekognition')
 
-images= './mi.jpeg'
+images= './images.jpeg'
 with open(images, 'rb') as image_file:
     image_bytes = image_file.read()
 
@@ -24,7 +24,7 @@ for celeb in response['CelebrityFaces']:
 
     name_position = (left, top -5)  
     cv2.putText(image, celeb['Name'], name_position,
-                cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 0, 255), 1)
+                cv2.FONT_HERSHEY_SIMPLEX, 0.3, (), 1)
 
 cv2.imshow("Celebrity Detection", image)
 cv2.waitKey(0)==ord('q')

@@ -17,4 +17,3 @@ while True :
     cv2.imshow("My Image",image)
     if cv2.waitKey(0)==ord("q"):
         break
-
